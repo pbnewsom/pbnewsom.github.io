@@ -8618,7 +8618,7 @@ Detection Rate         0.2584  0.06857  0.08874   0.0000  0.08473
 Detection Prevalence   0.5155  0.13285  0.26607   0.0000  0.08561
 Balanced Accuracy      0.7747  0.63735  0.64698   0.5000  0.72996</code></pre>
 <p>As can be seen, the results decision tree modeling are not very good. The model proved to be 50% accurate. Because output from using the <code>confusionMatrix()</code> command is so verbose, the confusion matrix and acccuracy of other models will be determined without the function.</p>
-<p>Random forest modeling was performed using boot632 subsampling (with 99 iterations) and kfold (with 5 folds) cross validations. Two boot632 models were performed because it was determined that the combination of principle components analysis preprocessing and removing variables from the training data might have impacted modeling results as suggested earlier. To improve processing time, parallel processing was used on 3 of 4 available threads on a Dell Inspiron model 15R laptop (2.53 Ghz, i3 duo core processor with hyperthreading) in a Microsoft Windows 7 environment.</p>
+<p>Random forest modeling was performed using boot632 subsampling (with 99 iterations) and kfold (with 5 folds) cross validations. Two boot632 models were performed because it was determined that the combination of principal components analysis preprocessing and removing variables from the training data might have impacted modeling results as suggested earlier. To improve processing time, parallel processing was used on 3 of 4 available threads on a Dell Inspiron model 15R laptop (2.53 Ghz, i3 duo core processor with hyperthreading) in a Microsoft Windows 7 environment.</p>
 <pre class="r"><code># random forest
 cl &lt;- makeCluster(3)
 registerDoParallel(cl)
@@ -8649,7 +8649,7 @@ pred.kfold &lt;- predict(rfModel.kfold, newdata= testing)</code></pre>
 <pre class="r"><code>accuracy.boot632 &lt;- round(sum(pred.boot632 == testing$classe)/length(testing$classe), 3)
 accuracy.boot632_2 &lt;- round(sum(pred.boot632_2 == testing$classe)/length(testing$classe), 3)
 accuracy.kfold &lt;- round(sum(pred.kfold == testing$classe)/length(testing$classe), 3)</code></pre>
-<p>The random forest model with boot632 cross validation and using principle components analysis had and accuracy of 97.1 percent and an out of sample error rate of 2.9 percent. The confusion matrix for the model is below.</p>
+<p>The random forest model with boot632 cross validation and using principal components analysis had and accuracy of 97.1 percent and an out of sample error rate of 2.9 percent. The confusion matrix for the model is below.</p>
 <pre class="r"><code>table(pred.boot632, testing$classe)</code></pre>
 <pre><code>            
 pred.boot632    A    B    C    D    E
@@ -8658,7 +8658,7 @@ pred.boot632    A    B    C    D    E
            C   10   18  991   38    7
            D    3    0    7  914    9
            E    1    4    0    4 1055</code></pre>
-<p>The random forest model with boot632 cross validation and not using principle components analysis had an accuracy of 99.4 percent and an out of sample error rate of 0.6 percent. The confusion matrix for the model is below.</p>
+<p>The random forest model with boot632 cross validation and not using principal components analysis had an accuracy of 99.4 percent and an out of sample error rate of 0.6 percent. The confusion matrix for the model is below.</p>
 <pre class="r"><code>table(pred.boot632_2, testing$classe)</code></pre>
 <pre><code>              
 pred.boot632_2    A    B    C    D    E
@@ -8667,7 +8667,7 @@ pred.boot632_2    A    B    C    D    E
              C    0    6 1015    8    1
              D    0    0    2  955    1
              E    0    0    0    1 1080</code></pre>
-<p>The random forest model with kfold cross validation and using principle components analysis had an accuracy of 99.4 percent and an out of sample error rate of 0.6 percent. The confusion matrix for the model is below.</p>
+<p>The random forest model with kfold cross validation and using principal components analysis had an accuracy of 99.4 percent and an out of sample error rate of 0.6 percent. The confusion matrix for the model is below.</p>
 <pre class="r"><code>table(pred.kfold, testing$classe)</code></pre>
 <pre><code>          
 pred.kfold    A    B    C    D    E

@@ -8605,7 +8605,7 @@ Balanced Accuracy      0.7747  0.63735  0.64698   0.5000  0.72996
 ```
 As can be seen, the results decision tree modeling are not very good. The model proved to be 50% accurate. Because output from using the `confusionMatrix()` command is so verbose, the confusion matrix and acccuracy of other models will be determined without the function.
 
-Random forest modeling was performed using boot632 subsampling (with 99 iterations) and kfold (with 5 folds) cross validations.  Two boot632 models were performed because it was determined that the combination of principle components analysis preprocessing and removing variables from the training data might have impacted modeling results as suggested earlier. To improve processing time, parallel processing was used on 3 of 4 available threads on a Dell Inspiron model 15R laptop (2.53 Ghz, i3 duo core processor with hyperthreading) in a Microsoft Windows 7 environment.
+Random forest modeling was performed using boot632 subsampling (with 99 iterations) and kfold (with 5 folds) cross validations.  Two boot632 models were performed because it was determined that the combination of principal components analysis preprocessing and removing variables from the training data might have impacted modeling results as suggested earlier. To improve processing time, parallel processing was used on 3 of 4 available threads on a Dell Inspiron model 15R laptop (2.53 Ghz, i3 duo core processor with hyperthreading) in a Microsoft Windows 7 environment.
 
 ```r
 # random forest
@@ -8650,7 +8650,7 @@ accuracy.boot632 <- round(sum(pred.boot632 == testing$classe)/length(testing$cla
 accuracy.boot632_2 <- round(sum(pred.boot632_2 == testing$classe)/length(testing$classe), 3)
 accuracy.kfold <- round(sum(pred.kfold == testing$classe)/length(testing$classe), 3)
 ```
-The random forest model with boot632 cross validation and using principle components analysis had and accuracy of 97.1 percent and an out of sample error rate of 2.9 percent. The confusion matrix for the model is below.
+The random forest model with boot632 cross validation and using principal components analysis had and accuracy of 97.1 percent and an out of sample error rate of 2.9 percent. The confusion matrix for the model is below.
 
 ```r
 table(pred.boot632, testing$classe)
@@ -8665,7 +8665,7 @@ pred.boot632    A    B    C    D    E
            D    3    0    7  914    9
            E    1    4    0    4 1055
 ```
-The random forest model with boot632 cross validation and not using principle components analysis had an accuracy of 99.4 percent and an out of sample error rate of 0.6 percent. The confusion matrix for the model is below.
+The random forest model with boot632 cross validation and not using principal components analysis had an accuracy of 99.4 percent and an out of sample error rate of 0.6 percent. The confusion matrix for the model is below.
 
 ```r
 table(pred.boot632_2, testing$classe)
@@ -8680,7 +8680,7 @@ pred.boot632_2    A    B    C    D    E
              D    0    0    2  955    1
              E    0    0    0    1 1080
 ```
-The random forest model with kfold cross validation and using principle components analysis had an accuracy of 99.4 percent and an out of sample error rate of 0.6 percent. The confusion matrix for the model is below.
+The random forest model with kfold cross validation and using principal components analysis had an accuracy of 99.4 percent and an out of sample error rate of 0.6 percent. The confusion matrix for the model is below.
 
 ```r
 table(pred.kfold, testing$classe)
