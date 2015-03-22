@@ -8737,7 +8737,7 @@ The prediction results of the final 2 models were identical.  When submitted, I 
 ###Conclusion:
 It has been shown that properly applied, a machine learning algorithm can be used to discern human activity and proper exercise form. The original researchers concluded however that this was not yet feasible due to a wide variety of factors that could occur in an uncontrolled environment.
 
-It was shown that utilizing 2 preprocessing methods negatively impacted results in one of the machine models.  A fourth model could be run using principal components analysis without removing any variables from the training set to determine if there would be improvements to prediction. Additionally, the principal components analysis threshhold (whose default value = 0.95) could have been increased to accomodate for variables. [1]
+It was shown that utilizing 2 preprocessing methods negatively impacted results in one of the machine models.  A fourth model could be run using principal components analysis without removing any variables from the training set to determine if there would be improvements to prediction. Additionally, the principal components analysis threshhold (whose default value = 0.95) could have been increased to accomodate for more variables. [1]
 <br><br>
 
 ###References:
